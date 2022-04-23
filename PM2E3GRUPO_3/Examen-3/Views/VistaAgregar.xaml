@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Examen_3.ViewModels"
+             x:Class="Examen_3.Views.VistaAgregar">
+    <ContentPage.BindingContext>
+        <vm:BaseViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="20,35,20,20">
+            <Image Source="https://iconosmag.com/wp-content/uploads/2020/03/Comunidado-oficial-UTH-coronavirus-en-Honduras.jpg"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   HorizontalOptions="CenterAndExpand"
+                   Aspect="Fill"/>
+            <Entry x:Name="idpago" Text="{Binding Id_pago, Mode=TwoWay}" IsVisible="false" />
+
+            <Entry x:Name="description" Text="{Binding Descripcion, Mode=TwoWay}" Placeholder="Descripcion:" />
+            <Entry x:Name="monto" Text="{Binding Monto, Mode=TwoWay}" Placeholder="Description" />
+            <Label  Text="Fecha del Pago:"></Label>
+            <DatePicker x:Name="DueDate" Date="{Binding DueDate, Mode=TwoWay}" ></DatePicker>
+
+
+
+            <Button x:Name="btnFoto" FontSize="15" FontAttributes="Bold" Text="FOTO_RECIBO" Clicked="Button_Clicked" HeightRequest="50" CornerRadius="60" VerticalOptions="Center" 
+             HorizontalOptions ="Center" BackgroundColor   ="DarkRed"/>
+            <Button Text="GUARDAR PAGO" FontSize="15" FontAttributes="Bold" HeightRequest="50" CornerRadius="60" VerticalOptions="Center" 
+             HorizontalOptions ="Center" BackgroundColor   ="DarkRed" Command="{Binding cmdAddTask}"/>
+            <Button x:Name="btnlista" FontSize="15" FontAttributes="Bold" Text="PAGOS GUARDADOS" Clicked="btnlista_Clicked" HeightRequest="50" CornerRadius="60" VerticalOptions="Center" 
+             HorizontalOptions ="Center" BackgroundColor   ="DarkRed"/>
+            <Button x:Name="btnUpdate" FontSize="15" FontAttributes="Bold" Text="MODIFICAR PAGOS" Clicked="btnUpdate_Clicked" HeightRequest="50" CornerRadius="60" VerticalOptions="Center" 
+             HorizontalOptions ="Center" BackgroundColor   ="DarkRed" Command="{Binding LoginCommand}"/>
+            <Button  x:Name="btneliminar" FontSize="15" FontAttributes="Bold" Text="ELIMINAR PAGOS" Clicked="btneliminar_Clicked" HeightRequest="50" CornerRadius="60" VerticalOptions="Center" 
+             HorizontalOptions ="Center" BackgroundColor   ="DarkRed" Command="{Binding cmdAddTask1}"/>
+            <Label Text="© Programacion Movil 2 2022" HorizontalTextAlignment="Center"/>
+
+            <Image
+            x:Name="image1" HeightRequest="300" WidthRequest="300"
+            ></Image>
+
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
